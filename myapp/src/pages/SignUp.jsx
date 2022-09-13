@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { Link } from "react-router-dom";
-import { Header } from "../components/Header";
+import { Header } from "../components/Main";
 import { Button, Input } from "@mui/material";
-import "../styles/SignUp.css";
+
 
 export const SignUp = () => {
   const [email, setEmail] = useState("");

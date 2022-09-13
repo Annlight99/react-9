@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
 import { Link } from "react-router-dom";
-import { Header } from "../components/Header";
-import "../styles/SignUp.css";
+import { Header } from "../components/Main";
+
 import { Button, Input } from "@mui/material";
 
 export const Login = () => {

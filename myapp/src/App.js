@@ -1,9 +1,9 @@
-import {HomePage} from "./pages/HomePage";
+import { HomePage } from "./pages/HomePage";
 import React from "react";
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 import { Chats } from "./pages/Chats";
-import { Profile } from "./pages/Profile";
-import { Dune } from "./pages/Dune";
+
+import { Dune } from "./pages/Link";
 import PrivateRoute from "./hocs/PrivateRoute";
 import { Login } from "./pages/Login";
 import { SignUp } from "./pages/SignUp";
@@ -24,30 +24,23 @@ function App() {
   }, []);
   return (
     <BrowserRouter>
-      <Routes> <Route path="/chats" element={<Chats />}/>
+      <Routes> <Route path="/chats" element={<Chats />} />
+
+        <Route path="/" element={<HomePage />} />
         <Route
-          path="/profile"
+          path="/chats/:chatId"
           element={
             <PrivateRoute auth={authed}>
-              <Profile />
+              <Chats />
             </PrivateRoute>
           }
         />
-        <Route path="/" element={<HomePage />} />
-        <Route
-         path="/chats/:chatId"
-         element={
-          <PrivateRoute auth={authed}>
-            <Chats />
-          </PrivateRoute>
-        }
-      />
-      <Route path="/dune" element={<Dune />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<SignUp />} />
-      <Route path="*" element={<Navigate to={"/"} replace />} />
-    </Routes>
-  </BrowserRouter>
-);
+        <Route path="/dune" element={<Dune />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="*" element={<Navigate to={"/"} replace />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 export default App;
