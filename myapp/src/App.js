@@ -3,7 +3,7 @@ import React from "react";
 import { Routes, Route, BrowserRouter, Navigate } from "react-router-dom";
 import { Chats } from "./pages/Chats";
 
-import { Dune } from "./pages/Link";
+import { Link } from "./pages/Link";
 import PrivateRoute from "./hocs/PrivateRoute";
 import { Login } from "./pages/Login";
 import { SignUp } from "./pages/SignUp";
@@ -35,7 +35,7 @@ function App() {
             </PrivateRoute>
           }
         />
-        <Route path="/dune" element={<Dune />} />
+        <Route path="/dune" element={<Link />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="*" element={<Navigate to={"/"} replace />} />
