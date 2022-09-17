@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "react-router-dom": "^6.3.0"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^13.4.0"
+  }
+}
